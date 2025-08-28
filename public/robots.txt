@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /patients/*/register
+Disallow: /patients/*/new-appointment
+
+Sitemap: https://care-pulse-peach.vercel.app/sitemap.xml

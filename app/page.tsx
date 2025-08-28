@@ -51,15 +51,13 @@ const Home = ({ searchParams }: SearchParamProps) => {
               <h1 className="header">Welcome to CarePulse Healthcare 👋</h1>
               <h2 className="text-dark-700 text-lg">Book Your Medical Appointment in Minutes</h2>
               <p className="text-dark-600">
-                Connect with certified healthcare providers and schedule appointments online. 
-                Our secure, HIPAA-compliant platform makes healthcare accessible and convenient.
+                Connect with certified healthcare providers and schedule appointments online.
               </p>
               
               {/* Key benefits for SEO and user understanding */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
                 <div className="text-center p-4">
                   <h3 className="font-semibold text-green-500">🔒 Secure & Private</h3>
-                  <p className="text-sm text-dark-600">HIPAA-compliant data protection</p>
                 </div>
                 <div className="text-center p-4">
                   <h3 className="font-semibold text-green-500">⚡ Instant Booking</h3>
@@ -67,7 +65,6 @@ const Home = ({ searchParams }: SearchParamProps) => {
                 </div>
                 <div className="text-center p-4">
                   <h3 className="font-semibold text-green-500">👩‍⚕️ Certified Providers</h3>
-                  <p className="text-sm text-dark-600">Licensed healthcare professionals</p>
                 </div>
               </div>
             </div>
