@@ -2,9 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Performance optimizations */
+/* === TAILWIND STYLES === */
 @layer base {
-  /* Improve font loading performance */
+  /* Remove scrollbar */
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+
+  /* Performance optimizations */
   :root {
     font-display: swap;
   }
@@ -52,26 +72,6 @@
     }
   }
 
-  /* Remove scrollbar but keep functionality */
-  .remove-scrollbar::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    border-radius: 0px;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 0px;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: transparent;
-  }
-
   /* Improve image loading */
   img {
     height: auto;
@@ -84,7 +84,7 @@
     cursor: not-allowed;
   }
 
-  /* Loading states */
+  /* Loading skeleton */
   .loading-skeleton {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
@@ -92,12 +92,42 @@
   }
 
   @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
   }
 }
 
 @layer utilities {
+  /* Custom font size and weight utilities */
+  .text-18-bold {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .text-24-bold {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  
+  .text-32-bold {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  .text-36-bold {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
   /* Accessibility utilities */
   .sr-only {
     position: absolute;
@@ -141,21 +171,11 @@
     will-change: opacity;
   }
 
-  /* Existing utilities with enhancements... */
+  /* Your existing utilities with enhancements */
   .sidebar {
     @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto bg-black-800 px-7 py-10;
   }
 
-  /* Enhanced form styles */
-  .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-0 transition-all duration-200 !important;
-  }
-
-  .shad-input:focus {
-    @apply border-green-500 !important;
-  }
-
-  /* Rest of existing styles... */
   .left-sidebar {
     @apply hidden lg:flex;
   }
@@ -196,10 +216,10 @@
     @apply text-14-regular justify-items-end text-center text-dark-600 xl:text-left;
   }
 
-  /* Continue with all your existing styles... */
+  /* Continue rest of your existing styles below as before... */
 }
 
-/* Enhanced React DatePicker styles with better accessibility */
+/* React DatePicker enhancements */
 .react-datepicker,
 .react-datepicker__time,
 .react-datepicker__header,
@@ -219,7 +239,7 @@
   outline-offset: 2px !important;
 }
 
-/* Enhanced phone input styles */
+/* React Phone Number Input enhancements */
 .PhoneInputInput {
   outline: none;
   margin-left: 4px;
@@ -234,17 +254,17 @@
   outline-offset: 2px !important;
 }
 
-/* Print styles for medical forms */
+/* Print styles */
 @media print {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     background: white !important;
     color: black !important;
   }
-  
+
   .medical-form-section {
     border: 1px solid #000 !important;
     background: white !important;
